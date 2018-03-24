@@ -2,6 +2,9 @@ package com.github.xwc.basicsample
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import android.util.Log
+import com.github.xwc.basicsample.sample.list
+import junit.framework.Assert
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,4 +24,10 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("com.github.xwc.basicsample", appContext.packageName)
     }
+
+
+    fun MyTest(){
+        Assert.assertEquals(6, list.last { it % 2 == 0 })
+    }
+
 }

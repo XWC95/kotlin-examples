@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 /**
- * Created by Administrator on 2018/3/13.
+ * Created by xwc on 2018/3/13.
  */
 class ForecastListAdapter(val items: List<String>) :
         RecyclerView.Adapter<ForecastListAdapter.ViewHolder>() {

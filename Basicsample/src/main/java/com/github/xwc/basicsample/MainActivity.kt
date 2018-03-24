@@ -1,8 +1,10 @@
 package com.github.xwc.basicsample
 
-import android.app.Activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.TypedValue
+import android.view.Gravity
+import android.widget.FrameLayout
 import android.widget.TextView
 import com.github.xwc.basicsample.sample.Person
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,12 +26,11 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 
         text.text = "你好，世界"
 
-//        val tv = TextView(act)
-//        tv.text = "DialogActivity"
-//        tv.gravity = Gravity.CENTER
-//        tv.setTextColor(Color.parseColor("#87CEEB"))
-//        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18f)
-//        btn1.addView(tv, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
+        val tv = TextView(act)
+        tv.text = "跳转RecycleView"
+        tv.gravity = Gravity.CENTER
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17f)
+        btn2.addView(tv, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
 
         //anko
         val textView: TextView = find(R.id.text)
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 //        }
 
 
-        btn1.setOnClickListener {
+        btn1.setClickListener {
 
             startActivity<DialogActivity>("id" to 5)
 //            startActivity(intentFor<DialogActivity>("id" to 5).newTask())
@@ -54,7 +55,10 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 //            Browse the web	browse(url)
 //            Share some text	share(text, [subject])
 //            Send a email	email(email, [subject], [text])
+        }
 
+        btn2.setClickListener {
+            startActivity<RecycleViewActivity>()
         }
 
         toast("Hello")
@@ -69,33 +73,35 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
 
     override fun onStart() {
         super.onStart()
-        debug("onStar")
+        info("onStar")
     }
 
     override fun onRestart() {
         super.onRestart()
-        debug("onRestart")
+        info("onRestart")
     }
 
     override fun onResume() {
         super.onResume()
-        debug("onResume")
+        info("onResume")
     }
 
     override fun onStop() {
         super.onStop()
-        debug("onStar")
+        info("onStar")
     }
 
     override fun onPause() {
         super.onPause()
-        debug("onPause")
+        info("onPause")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        debug("onDestroy")
+        info("onDestroy")
     }
+
+
 
 }
 

@@ -1,14 +1,18 @@
 package com.github.xwc.basicsample.sample
 
-import android.content.Context
 import java.util.*
 
 /**
+ *
  * Created by xwc on 2018/3/13.
  */
 open class A(name: String) {
     fun add(x: Int, y: Int): Int {
         return x + y
+    }
+
+    fun test(x :Int) :Int? {
+        return  x
     }
 
     fun add2(x: Int, y: Int): Int = x + y
